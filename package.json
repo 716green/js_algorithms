@@ -1,0 +1,24 @@
+{
+  "name": "js_interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "intro.js",
+  "scripts": {
+    "serve": "echo \"No File Specified\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "performance-now": "^2.1.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/716green/js_algorithms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/716green/js_algorithms/issues"
+  },
+  "homepage": "https://github.com/716green/js_algorithms#readme"
+}
