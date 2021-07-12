@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Question</title>
+    <!-- <script defer src="./index.js"></script> -->
+    <script>
+      function createButtonsBad() {
+        //! var here breaks scope
+        for (var i = 1; i <= 5; i++) {
+          let body = document.getElementsByTagName('BODY')[0];
+          console.log(body);
+          let button = document.createElement('BUTTON');
+          button.innerHTML = 'Button ' + i;
+          button.onclick = () => {
+            alert('This is button ' + i);
+          };
+          body.appendChild(button);
+        }
+      }
+
+      //* Fixed scope with let
+      function createButtons() {
+        for (let i = 1; i <= 5; i++) {
+          let body = document.getElementsByTagName('BODY')[0];
+          console.log(body);
+          let button = document.createElement('BUTTON');
+          button.innerHTML = 'Button ' + i;
+          button.onclick = () => {
+            alert('This is button ' + i);
+          };
+          body.appendChild(button);
+        }
+      }
+
+      //? Solution uses an IIFE
+      function createButtonsSolution() {
+        //! var here breaks scope
+        for (var i = 1; i <= 5; i++) {
+          let body = document.getElementsByTagName('BODY')[0];
+          console.log(body);
+          let button = document.createElement('BUTTON');
+          button.innerHTML = 'Button ' + i;
+          ((num) => {
+            button.onclick = () => {
+              alert('This is button ' + num);
+            };
+          })(i);
+          body.appendChild(button);
+        }
+      }
+
+      createButtonsSolution();
+    </script>
+  </head>
+  <body></body>
+</html>
